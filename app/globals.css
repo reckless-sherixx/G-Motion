@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #060610;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -12,15 +12,71 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* Glass Card */
+.glass-card {
+  @apply bg-white/[0.04] backdrop-blur-xl border border-white/[0.06] rounded-2xl p-4;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Buttons */
+.btn {
+  @apply px-4 py-2.5 rounded-xl text-sm font-semibold transition-all;
+}
+.btn-glow {
+  @apply bg-gradient-to-r from-cyan-500 to-purple-600 text-white;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2), 0 0 40px rgba(123, 47, 247, 0.1);
+}
+.btn-glow:hover {
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.35), 0 0 50px rgba(123, 47, 247, 0.2);
+}
+.btn-glass {
+  @apply bg-white/[0.06] text-white border border-white/[0.08] backdrop-blur-sm;
+}
+.btn-glass:hover {
+  @apply bg-white/[0.1];
+}
+.btn-danger {
+  @apply bg-red-600/80 text-white border border-red-500/30;
+  box-shadow: 0 0 20px rgba(255, 0, 64, 0.15);
+}
+.btn-danger:hover {
+  @apply bg-red-500/90;
+}
+.btn-warning {
+  @apply bg-yellow-500/80 text-black border border-yellow-400/30 font-bold;
+  box-shadow: 0 0 20px rgba(255, 200, 0, 0.2);
+}
+
+/* Input */
+.input-field {
+  @apply bg-white/[0.05] border border-white/[0.08] rounded-xl px-3 py-2 text-sm text-white
+    placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-cyan-500/50 backdrop-blur-sm;
+}
+
+/* Range slider */
+.slider {
+  @apply w-full h-1.5 rounded-lg appearance-none cursor-pointer;
+  background: linear-gradient(to right, rgba(0, 212, 255, 0.3), rgba(123, 47, 247, 0.3));
+}
+.slider::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 rounded-full;
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+.slider::-moz-range-thumb {
+  @apply w-4 h-4 rounded-full border-0;
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
