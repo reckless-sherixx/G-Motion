@@ -250,6 +250,29 @@ body {
   box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
 }
 
+.gmotion .btn-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin-right: 12px;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gmotion .btn-link:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+}
+
+.gmotion .btn-link:active {
+  transform: scale(0.95);
+}
+
 .gmotion .viz-section {
   flex: 1;
   display: flex;
